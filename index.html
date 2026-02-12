@@ -1,211 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Valentine 💗</title>
+<title>For You 💗</title>
 
-<!-- Modern Clean Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Elegant Letter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    padding: 20px 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    text-align: center;
+
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#ffd6e0,#ffeaf4);
+    font-family: 'Cormorant Garamond', serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-.container {
-    background: white;
-    padding: 25px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 420px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    position: relative;
+.container{
+    background: #fffafc;
+    padding:35px 28px;
+    max-width:500px;
+    margin:20px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(255,105,135,0.25);
+    line-height:1.9;
+    font-size:20px;
+    color:#4a2c2a;
+    animation: fadeIn 1.8s ease;
 }
 
-h1 {
-    font-size: 22px;
-    font-weight: 600;
+/* Soft paper feel */
+.container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity:0.15;
+    border-radius:20px;
+    pointer-events:none;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 400;
+h1{
+    text-align:center;
+    font-weight:600;
+    font-size:28px;
+    margin-bottom:20px;
+    color:#d6336c;
 }
 
-button {
-    padding: 12px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 20px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
+.highlight{
+    color:#e0316f;
+    font-size:22px;
+    font-weight:600;
+    text-align:center;
 }
 
-.yes-btn {
-    background-color: #ff4d6d;
-    color: white;
+button{
+    display:block;
+    margin:30px auto;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    background: linear-gradient(45deg,#ff4d88,#ff80ab);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(255,105,135,0.4);
+    transition: all 0.3s ease;
 }
 
-.no-btn {
-    background-color: #ccc;
+button:hover{
+    transform:scale(1.05);
 }
 
-.arrow-btn {
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
+.footer{
+    text-align:center;
+    margin-top:35px;
+    font-size:22px;
+    font-weight:600;
+    color:#d6336c;
 }
 
-img {
-    width: 100%;
-    border-radius: 20px;
-    margin-top: 15px;
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="container" id="mainBox">
-    <h1>Will you be my Valentine? 💝</h1>
-    <button class="yes-btn" onclick="sayYes()">Yes 💗</button>
-    <button class="no-btn" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+<div class="container">
+
+<h1>For My Love 💌</h1>
+
+<p>
+I don’t know how to start this without smiling… 😂
+</p>
+
+<p>
+I am not really a “surprise” person. You know that.  
+But inniku naa onnu panniruken… and I hope it makes you smile a little extra 💗
+</p>
+
+<p>
+There’s something about you that feels peaceful.  
+Whether you’re talking, laughing, ranting or just being silent…  
+I like you in every version 🥹
+</p>
+
+<p>
+The way I fell for you wasn’t dramatic.  
+It was soft… it was your sweet heart 💕  
+Even with our small fights and misunderstandings,  
+I still see the purest soul in you.
+</p>
+
+<p style="text-align:center; margin-top:25px;">
+Sometimes this line comes to my mind when I think of you —
+</p>
+
+<p class="highlight">
+“Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan.”
+</p>
+
+<button onclick="playVoice()">🎧 Tap to hear my voice</button>
+
+<audio id="voice">
+  <source src="line-voice.mp3" type="audio/mpeg">
+</audio>
+
+<p>
+Like you said, this day is just another day for us.  
+Because every day feels special when you’re around 💞
+</p>
+
+<p>
+I’m not going to let my gem go easily.  
+I just hope for more laughter, more konjals,  
+and more of us… always ✨
+</p>
+
+<div class="footer">
+Happy Valentine’s Day 💗
+</div>
+
 </div>
 
 <script>
-
-function moveNo() {
-    const noBtn = document.getElementById("noBtn");
-    noBtn.style.position = "absolute";
-    noBtn.style.top = Math.random() * 300 + "px";
-    noBtn.style.left = Math.random() * 200 + "px";
-}
-
-function sayYes() {
-    const box = document.getElementById("mainBox");
-    box.innerHTML = `
-        <h1>I knew it da chlm 💗</h1>
-        <p>
-        Okay okay... I am not a surpriser that u knw 😂<br>
-        But Naan onnu panniruken something and you would be surprised 💕
-        </p>
-        <button class="arrow-btn" onclick="showParagraph()">➡️</button>
-    `;
-}
-
-function showParagraph() {
-    const box = document.getElementById("mainBox");
-    box.innerHTML = `
-        <p>
-        I don’t know how to start this without smiling 😂<br><br>
-        I am not really a "surprise" person. You know that.
-        Aana inniku naa onu panniruken,
-        and I hope it makes you smile a little extra. 💗<br><br>
-
-        There’s something about you that feels peaceful.
-        Whether you’re here, not here, talking, ranting, laughing or just being silent…
-        I like you in every version. 🥹<br><br>
-
-        The way I fell for you wasn’t dramatic.
-        It was soft… it was your sweet heart 💗
-        Namma kitta iruka chinna sanda, misunderstanding edhuva irundhaalum,
-        I still see the purest soul in you. And that’s what stays with me. 💞<br><br>
-
-        Tbh I don’t even know why you’re this cute 😂
-        I’m not getting bored at all.
-        It just feels like I wanna sit close to you,
-        hold you slowly, admire you… and never rush a single moment 💗<br><br>
-
-        Sometimes this line comes to my mind when I think of you —<br><br>
-
-        <b style="font-size:18px; color:#ff4d6d;">
-        "Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan."
-        </b> 🥺<br><br>
-
-        <button onclick="playLineVoice()"
-        style="padding:8px 16px; border:none; border-radius:15px; background:#ff4d6d; color:white; cursor:pointer;">
-        🎧 Tap panni en voice la kelu
-        </button>
-
-        <audio id="lineVoice" src="line-voice.mp3"></audio>
-
-        <br><br>
-
-        Like you said, this day is just another day for us.
-        Because every day feels special when you’re around,
-        when you smile, when you tease, when you overthink, when you rant. 💕<br><br>
-
-        I’m not going to let my gem go easily.
-        I just hope and pray for more konjals, more small fights,
-        more laughter, and more of us… always. ✨
-        </p>
-
-        <button class="arrow-btn" onclick="askFeeling()">➡️</button>
-    `;
-}
-
-function playLineVoice() {
-    const audio = document.getElementById("lineVoice");
+function playVoice(){
+    var audio = document.getElementById("voice");
     audio.currentTime = 0;
-    audio.play().then(() => {
-        console.log("Playing...");
-    }).catch(err => {
-        console.log("Playback blocked:", err);
-    });
+    audio.play();
 }
-
-function askFeeling() {
-    const box = document.getElementById("mainBox");
-    box.innerHTML = `
-        <h1>How do you feel now? 💕</h1>
-        <button class="yes-btn" onclick="showImage('hold.jpg')">Wanna hold hands 🤝</button>
-        <button class="yes-btn" onclick="showImage('kiss.jpg')">Wanna kiss you 😘</button>
-    `;
-}
-
-function showImage(imageName) {
-
-    const box = document.getElementById("mainBox");
-
-    let voiceFile = "";
-    if (imageName === 'hold.jpg') {
-        voiceFile = 'hold-voice.mp3';
-    } else {
-        voiceFile = 'kiss-voice.mp3';
-    }
-
-    box.innerHTML = `
-        <h1>Hehehe 💗</h1>
-
-        <img src="${imageName}" alt="cute image">
-
-        <p style="margin-top:15px; font-size:14px; opacity:0.8;">
-        I wanted you to hear this too… 🤍
-        </p>
-
-        <audio controls style="width:100%; margin-top:10px;">
-            <source src="${voiceFile}" type="audio/mpeg">
-        </audio>
-
-        <h2 style="margin-top:20px; color:#ff4d6d;">
-        Happy Valentine's Day ❤️
-        </h2>
-    `;
-}
-
 </script>
 
 </body>
