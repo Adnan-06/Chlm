@@ -80,8 +80,8 @@ function sayYes() {
     const box = document.getElementById("mainBox");
     box.innerHTML = `
         <h1>I knew it da chlm 💗</h1>
-        <p>Okay okay... I am not a surpriser 😅<br>
-        But yeah… I did something and you would be surprised 💕</p>
+        <p>Okay okay... I am not a surpriser that u knw 😂<br>
+        But Naan onnu panniruken something and you would be surprised 💕</p>
         <button class="arrow-btn" onclick="showParagraph()">➡️</button>
     `;
 }
@@ -90,29 +90,45 @@ function showParagraph() {
     const box = document.getElementById("mainBox");
     box.innerHTML = `
         <p>
-        I don’t know how to start this without smiling… 😊<br><br>
-        I’m not really a "surprise" person. You know that. But yeah… I tried something today,
+        I don’t know how to start this without smiling 😂<br><br>
+        Iam not really a "surprise" person. You know that. Aana inniku naa onu panniruken,
         and I hope it makes you smile a little extra. 💗<br><br>
         There’s something about you that feels peaceful.
         Whether you’re here, not here, talking, ranting, laughing or just being silent…
         I like you in every version. 🥹<br><br>
-        The way I fell for you wasn’t dramatic.
-        It was soft… it was your sweet heart.
-        Even when we have small fights or misunderstandings,
+        The way I falll for you wasnnt dramatic
+        It was soft… it was your sweet heart 💗
+        Namma kitta iruka chinna sanda, misunderstanding edhuva irundhaalum,
         I still see the purest soul in you. And that’s what stays with me. 💞<br><br>
-        Honestly, I don’t even know why you’re this cute.
+        tbh i don’t even know why you’re this cute😂
+        andha could you be anymore cute dhaan😂💗
         I’m not getting bored at all.
-        It just feels like I want to sit close to you,
-        hold you slowly, admire you… and never rush a single moment. 🤍<br><br>
-        Sometimes this line comes to my mind when I think of you —<br>
-        <b>"Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan."</b> 🥺<br><br>
+        It just feels like I wanna sit close to you,
+        hold you slowly, admire you… and never rush a single moment💗<br><br>
+        
+        Sometimes this line comes to my mind when I think of you —<br><br>
+        
+        <b style="font-size:18px; color:#ff4d6d;">
+        "Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan."
+        </b> 🥺<br><br>
+
+        <button onclick="playLineVoice()" 
+        style="padding:8px 16px; border:none; border-radius:15px; background:#ff4d6d; color:white; cursor:pointer;">
+        🎧 Tap panni en voice la kelu
+        </button>
+
+        <audio id="lineVoice" src="line-voice.mp3"></audio>
+
+        <br><br>
+
         Like you said, this day is just another day for us.
-        Because every day feels special when you’re around —
+        Because every day feels special when you’re around,
         when you smile, when you tease, when you overthink, when you rant. 💕<br><br>
         I’m not going to let my gem go easily.
         I just hope and pray for more konjals, more small fights,
         more laughter, and more of us… always. ✨
         </p>
+
         <button class="arrow-btn" onclick="askFeeling()">➡️</button>
     `;
 }
