@@ -2,18 +2,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You 💗</title>
+<title>For My Love 💗</title>
 
-<!-- Elegant Letter Font -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
     margin:0;
     padding:0;
-    background: linear-gradient(135deg,#ffd6e0,#ffeaf4);
-    font-family: 'Cormorant Garamond', serif;
+    background:linear-gradient(135deg,#ffd6e0,#ffeaf4);
+    font-family:'Cormorant Garamond',serif;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -21,152 +19,202 @@ body{
 }
 
 .container{
-    background: #fffafc;
-    padding:35px 28px;
+    background:#fffafc;
+    padding:30px 25px;
+    width:90%;
     max-width:500px;
-    margin:20px;
     border-radius:20px;
     box-shadow:0 15px 40px rgba(255,105,135,0.25);
-    line-height:1.9;
-    font-size:20px;
-    color:#4a2c2a;
-    animation: fadeIn 1.8s ease;
-}
-
-/* Soft paper feel */
-.container::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-    opacity:0.15;
-    border-radius:20px;
-    pointer-events:none;
+    text-align:center;
+    line-height:1.8;
+    font-size:18px;
+    animation:fadeIn 0.6s ease;
+    position:relative;
 }
 
 h1{
-    text-align:center;
-    font-weight:600;
-    font-size:28px;
-    margin-bottom:20px;
     color:#d6336c;
 }
 
-.highlight{
-    color:#e0316f;
-    font-size:22px;
-    font-weight:600;
-    text-align:center;
-}
-
 button{
-    display:block;
-    margin:30px auto;
-    padding:14px 28px;
+    margin:10px;
+    padding:12px 22px;
     border:none;
-    border-radius:30px;
-    background: linear-gradient(45deg,#ff4d88,#ff80ab);
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff4d88,#ff80ab);
     color:white;
     font-size:16px;
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(255,105,135,0.4);
-    transition: all 0.3s ease;
+    transition:0.3s;
 }
 
 button:hover{
     transform:scale(1.05);
 }
 
-.footer{
-    text-align:center;
-    margin-top:35px;
+.no-btn{
+    background:#ccc;
+    color:#333;
+    position:relative;
+}
+
+.arrow{
     font-size:22px;
-    font-weight:600;
+    background:none;
+    box-shadow:none;
     color:#d6336c;
+    cursor:pointer;
+}
+
+.option-img{
+    width:45%;
+    margin:10px;
+    cursor:pointer;
+    border-radius:15px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+    margin-top:15px;
 }
 
 @keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container" id="box">
 
-<h1>For My Love 💌</h1>
+<h1>Will you be my Valentine? 💖</h1>
 
-<p>
-I don’t know how to start this without smiling… 😂
-</p>
-
-<p>
-I am not really a “surprise” person. You know that.  
-But inniku naa onnu panniruken… and I hope it makes you smile a little extra 💗
-</p>
-
-<p>
-There’s something about you that feels peaceful.  
-Whether you’re talking, laughing, ranting or just being silent…  
-I like you in every version 🥹
-</p>
-
-<p>
-The way I fell for you wasn’t dramatic.  
-It was soft… it was your sweet heart 💕  
-Even with our small fights and misunderstandings,  
-I still see the purest soul in you.
-</p>
-
-<p style="text-align:center; margin-top:25px;">
-Sometimes this line comes to my mind when I think of you —
-</p>
-
-<p class="highlight">
-“Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan.”
-</p>
-
-<button onclick="playVoice()">🎧 Tap to hear my voice</button>
-
-<audio id="voice">
-  <source src="line-voice.mp3" type="audio/mpeg">
-</audio>
-
-<p>
-Like you said, this day is just another day for us.  
-Because every day feels special when you’re around 💞
-</p>
-
-<p>
-I’m not going to let my gem go easily.  
-I just hope for more laughter, more konjals,  
-and more of us… always ✨
-</p>
-
-<div class="footer">
-Happy Valentine’s Day 💗
-</div>
+<button onclick="sayYes()">Yes 💗</button>
+<button class="no-btn" id="noBtn" onmouseover="moveNo()">No 🙈</button>
 
 </div>
 
 <script>
-function playVoice(){
-    var audio = document.getElementById("voice");
+
+function moveNo(){
+    const btn = document.getElementById("noBtn");
+    btn.style.position="absolute";
+    btn.style.top=Math.random()*250+"px";
+    btn.style.left=Math.random()*200+"px";
+}
+
+function sayYes(){
+    const box = document.getElementById("box");
+    box.innerHTML = `
+    <h1>I knew it da chlm 💗</h1>
+    <button class="arrow" onclick="showParagraph()">➡️</button>
+    `;
+}
+
+function showParagraph(){
+    const box = document.getElementById("box");
+
+    box.innerHTML = `
+    <h1>For My Love 💌</h1>
+
+    <p>
+        I don’t know how to start this without smiling 😂<br><br>
+        I am not really a "surprise" person. You know that.
+        Aana inniku naa onu panniruken,
+        and I hope it makes you smile a little extra. 💗<br><br>
+
+        There’s something about you that feels peaceful.
+        Whether you’re here, not here, talking, ranting, laughing or just being silent…
+        I like you in every version. 🥹<br><br>
+
+        The way I fell for you wasn’t dramatic.
+        It was soft… it was your sweet heart 💗
+        Namma kitta iruka chinna sanda, misunderstanding edhuva irundhaalum,
+        I still see the purest soul in you. And that’s what stays with me. 💞<br><br>
+
+        Tbh I don’t even know why you’re this cute 😂
+        I’m not getting bored at all.
+        It just feels like I wanna sit close to you,
+        hold you slowly, admire you… and never rush a single moment 💗<br><br>
+
+        Sometimes this line comes to my mind when I think of you —<br><br>
+
+        <b style="font-size:18px; color:#ff4d6d;">
+        "Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan."
+        </b> 🥺<br><br>
+
+        <button onclick="playLineVoice()"
+        style="padding:8px 16px; border:none; border-radius:15px; background:#ff4d6d; color:white; cursor:pointer;">
+        🎧 Tap panni en voice la kelu
+        </button>
+
+        <audio id="lineVoice" src="line-voice.mp3"></audio>
+
+        <br><br>
+
+        Like you said, this day is just another day for us.
+        Because every day feels special when you’re around,
+        when you smile, when you tease, when you overthink, when you rant. 💕<br><br>
+
+        I’m not going to let my gem go easily.
+        I just hope and pray for more konjals, more small fights,
+        more laughter, and more of us… always. ✨
+    </p>
+
+    <button class="arrow" onclick="askFeeling()">➡️</button>
+    `;
+}
+
+function playLineVoice(){
+    const audio = document.getElementById("lineVoice");
     audio.currentTime = 0;
     audio.play();
 }
+
+function askFeeling(){
+    const box = document.getElementById("box");
+    box.innerHTML = `
+    <h1>How do you feel now? 💕</h1>
+
+    <img src="hold.jpg" class="option-img" onclick="showFinal('hold')">
+    <img src="kiss.jpg" class="option-img" onclick="showFinal('kiss')">
+
+    <p style="font-size:14px;">Tap one 🤭</p>
+    `;
+}
+
+function showFinal(type){
+    const box = document.getElementById("box");
+
+    let image="";
+    let voice="";
+
+    if(type==="hold"){
+        image="hold.jpg";
+        voice="hold-voice.mp3";
+    }else{
+        image="kiss.jpg";
+        voice="kiss-voice.mp3";
+    }
+
+    box.innerHTML = `
+    <h1>Hehehe 💞</h1>
+
+    <img src="${image}">
+
+    <audio controls style="width:100%; margin-top:15px;">
+        <source src="${voice}" type="audio/mpeg">
+    </audio>
+
+    <h2 style="color:#d6336c; margin-top:20px;">
+    Happy Valentine’s Day ❤️
+    </h2>
+    `;
+}
+
 </script>
 
 </body>
