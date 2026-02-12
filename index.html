@@ -176,11 +176,10 @@ function playLineVoice(){
     var audio = document.getElementById("lineVoice");
 
     if(audio){
-        audio.currentTime = 0;
-        audio.muted = false;
-        audio.play().catch(function(error){
-            console.log(error);
-        });
+        alert("Audio found");
+        audio.play();
+    } else {
+        alert("Audio NOT found");
     }
 }
 
