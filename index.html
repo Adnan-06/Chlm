@@ -152,7 +152,8 @@ function showParagraph(){
         </button>
 
         <audio id="lineVoice" preload="auto" style="display:none;" controls>
-
+    <source src="line-voice.mp3" type="audio/mpeg">
+</audio>
         <br><br>
 
         Like you said, this day is just another day for us.
@@ -172,12 +173,9 @@ function playLineVoice(){
     var audio = document.getElementById("lineVoice");
 
     if(audio){
-        audio.currentTime = 0;   // reset
-        audio.muted = false;     // ensure not muted
-        audio.play().then(() => {
-            console.log("Playing");
-        }).catch(error => {
-            alert("Tap again 💗");  // fallback if blocked
+        audio.currentTime = 0;
+        audio.muted = false;
+        audio.play().catch(function(error){
             console.log(error);
         });
     }
