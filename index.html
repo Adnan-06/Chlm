@@ -151,9 +151,7 @@ function showParagraph(){
         🎧 Tap panni en voice la kelu
         </button>
 
-        <audio id="lineVoice" preload="auto">
-    <source src="line-voice.mp3" type="audio/mpeg">
-</audio>
+        <audio id="lineVoice" preload="auto" style="display:none;" controls>
 
         <br><br>
 
@@ -174,9 +172,13 @@ function playLineVoice(){
     var audio = document.getElementById("lineVoice");
 
     if(audio){
-        audio.load();     // force reload
-        audio.play().catch(function(error){
-            console.log("Audio play error:", error);
+        audio.currentTime = 0;   // reset
+        audio.muted = false;     // ensure not muted
+        audio.play().then(() => {
+            console.log("Playing");
+        }).catch(error => {
+            alert("Tap again 💗");  // fallback if blocked
+            console.log(error);
         });
     }
 }
