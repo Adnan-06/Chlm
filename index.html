@@ -1,149 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Be My Valentine? 💖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Valentine 💗</title><style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+.no-btn {
+    background-color: #ccc;
+}
+
+.arrow-btn {
+    font-size: 22px;
+    background: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+</style></head><body><div class="container" id="mainBox">
+    <h1>Will you be my Valentine? 💝</h1>
+    <button class="yes-btn" onclick="sayYes()">Yes 💗</button>
+    <button class="no-btn" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+</div><script>
+function moveNo() {
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.position = "absolute";
+    noBtn.style.top = Math.random() * 300 + "px";
+    noBtn.style.left = Math.random() * 200 + "px";
+}
+
+function sayYes() {
+    const box = document.getElementById("mainBox");
+    box.innerHTML = `
+        <h1>I knew it da chlm 💗</h1>
+        <p>Okay okay... I am not a surpriser 😅<br>
+        But yeah… I did something and you would be surprised 💕</p>
+        <button class="arrow-btn" onclick="showParagraph()">➡️</button>
+    `;
+}
+
+function showParagraph() {
+    const box = document.getElementById("mainBox");
+    box.innerHTML = `
+        <p>
+        I don’t know how to start this without smiling… 😊<br><br>
+        I’m not really a "surprise" person. You know that. But yeah… I tried something today,
+        and I hope it makes you smile a little extra. 💗<br><br>
+        There’s something about you that feels peaceful.
+        Whether you’re here, not here, talking, ranting, laughing or just being silent…
+        I like you in every version. 🥹<br><br>
+        The way I fell for you wasn’t dramatic.
+        It was soft… it was your sweet heart.
+        Even when we have small fights or misunderstandings,
+        I still see the purest soul in you. And that’s what stays with me. 💞<br><br>
+        Honestly, I don’t even know why you’re this cute.
+        I’m not getting bored at all.
+        It just feels like I want to sit close to you,
+        hold you slowly, admire you… and never rush a single moment. 🤍<br><br>
+        Sometimes this line comes to my mind when I think of you —<br>
+        <b>"Kan kotta mudiyaamal, mudiyaamal paarkum salikaadha oru pennum needhaan."</b> 🥺<br><br>
+        Like you said, this day is just another day for us.
+        Because every day feels special when you’re around —
+        when you smile, when you tease, when you overthink, when you rant. 💕<br><br>
+        I’m not going to let my gem go easily.
+        I just hope and pray for more konjals, more small fights,
+        more laughter, and more of us… always. ✨
+        </p>
+        <button class="arrow-btn" onclick="askFeeling()">➡️</button>
+    `;
+}
+
+function askFeeling() {
+    const box = document.getElementById("mainBox");
+    box.innerHTML = `
+        <h1>How do you feel now? 💕</h1>
+        <button class="yes-btn" onclick="showImage('hold.jpg')">Wanna hold hands 🤝</button>
+        <button class="yes-btn" onclick="showImage('kiss.jpg')">Wanna kiss you 😘</button>
+    `;
+}
+
+function showImage(imageName) {
+    const box = document.getElementById("mainBox");
+
+    // Decide which voice note to play
+    let voiceFile = "";
+    if (imageName === 'hold.jpg') {
+        voiceFile = 'hold-voice.mp3';
+    } else {
+        voiceFile = 'kiss-voice.mp3';
     }
 
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 24px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-      width: 90%;
-      max-width: 340px;
-      animation: pop 0.6s ease;
-    }
-
-    @keyframes pop {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    h1 {
-      color: #e91e63;
-      margin-bottom: 25px;
-      font-size: 22px;
-    }
-
-    .buttons {
-      position: relative;
-      height: 140px;
-    }
-
-    button {
-      padding: 14px 28px;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
-
-    #yes {
-      background: #e91e63;
-      color: white;
-    }
-
-    #no {
-      position: absolute;
-      background: #9e9e9e;
-      color: white;
-      left: 140px;
-      top: 70px;
-    }
-
-    .message {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #e91e63;
-      display: none;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 4s linear infinite;
-    }
-
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-100vh); opacity: 0; }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="card">
-    <h1>Will you be my Valentine? 💕</h1>
-
-    <div class="buttons">
-      <button id="yes">Yes 💖</button>
-      <button id="no">No 😜</button>
-    </div>
-
-    <div class="message" id="message">
-      I knew it da chlm 💗🥹
-    </div>
-  </div>
-
-  <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const message = document.getElementById("message");
-
-    function moveNoButton() {
-      const x = Math.random() * 200;
-      const y = Math.random() * 90;
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
-
-    // For mobile + desktop
-    noBtn.addEventListener("mouseover", moveNoButton);
-    noBtn.addEventListener("touchstart", moveNoButton);
-
-    yesBtn.addEventListener("click", () => {
-      message.style.display = "block";
-      createHearts();
-    });
-
-    function createHearts() {
-      for (let i = 0; i < 15; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerText = "💗";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (2 + Math.random() * 3) + "s";
-        document.body.appendChild(heart);
-
-        setTimeout(() => heart.remove(), 4000);
-      }
-    }
-  </script>
-</body>
+    box.innerHTML = `
+        <h1>Hehehe 💗</h1>
+        <img src="${imageName}" alt="cute image">
+        
+        <p style="margin-top:15px; font-size:14px; opacity:0.8;">
+        I wanted you to hear this too… 🤍
+        </p>
+        
+        <audio controls style="width:100%; margin-top:10px;">
+            <source src="${voiceFile}" type="audio/mpeg">
+        </audio>
+        
+        <h2 style="margin-top:20px; color:#ff4d6d;">
+        Happy Valentine's Day ❤️
+        </h2>
+    `;
+}
+</script></body>
 </html>
