@@ -159,7 +159,7 @@ style="width:100%; margin-top:10px; display:none;">
 </audio>
         <br><br>
 
-        Like you said, this day is just another day for us.
+        Voice ipo dhaan ketan romba cringe ah iruku adjust panniko. Like you said, this day is just another day for us.
         Because every day feels special when you’re around,
         when you smile, when you tease, when you overthink, when you rant. 💕<br><br>
 
@@ -182,10 +182,13 @@ function askFeeling(){
     box.innerHTML = `
     <h1>How do you feel now? 💕</h1>
 
-    <img src="hold.jpg" class="option-img" onclick="showFinal('hold')">
-    <img src="kiss.jpg" class="option-img" onclick="showFinal('kiss')">
+    <button onclick="showFinal('hold')">
+        Wanna hold your hands 💗
+    </button>
 
-    <p style="font-size:14px;">Tap one 🤭</p>
+    <button onclick="showFinal('kiss')">
+        Wanna kiss you now 💗
+    </button>
     `;
 }
 
@@ -193,27 +196,24 @@ function showFinal(type){
     const box = document.getElementById("box");
 
     let image="";
-    let voice="";
 
     if(type==="hold"){
         image="hold.jpg";
-        voice="hold-voice.mp3";
     }else{
         image="kiss.jpg";
-        voice="kiss-voice.mp3";
     }
 
     box.innerHTML = `
-    <h1>Hehehe 💞</h1>
+    <h1> 💞</h1>
 
     <img src="${image}">
 
     <audio controls style="width:100%; margin-top:15px;">
-        <source src="${voice}" type="audio/mpeg">
+        <source src="final-voice.mp3" type="audio/mpeg">
     </audio>
 
     <h2 style="color:#d6336c; margin-top:20px;">
-    Happy Valentine’s Day ❤️
+        Happy Valentine’s Day 💗
     </h2>
     `;
 }
