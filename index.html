@@ -153,7 +153,8 @@ function showParagraph(){
         style="padding:8px 16px; border:none; border-radius:15px; background:#ff4d6d; color:white; cursor:pointer;">
         🎧 Tap panni en voice la kelu
         </button>
-        <audio id="lineVoice" preload="auto" controls style="width:100%; margin-top:10px;">
+        <audio id="lineVoice" preload="auto" controls 
+style="width:100%; margin-top:10px; display:none;">
     <source src="line-voice.m4a" type="audio/mp4">
 </audio>
         <br><br>
@@ -173,7 +174,7 @@ function showParagraph(){
 
 function playLineVoice(){
     var audio = document.getElementById("lineVoice");
-    audio.currentTime = 0;
+    audio.style.display = "block";   // only show controls
 }
 
 function askFeeling(){
